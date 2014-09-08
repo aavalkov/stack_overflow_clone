@@ -2,7 +2,20 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+  end
 
+  def new
+    @question = Question.new
+  end
+
+  def create
+    @question = Question.new(question_params)
+    if @question.save
+      flash[:notice] = "Question Added"
+      redirect_to root_url, notice: "Your question has been added"
+    else
+      render "new"
+    end
   end
 
   def show
@@ -12,7 +25,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:questions).permit(:title, :decsription, :user_id)
+    params.require(:question).permit(:title, :description).merge(user_id: current_user.id)
   end
 
 end
