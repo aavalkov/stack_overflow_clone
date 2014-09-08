@@ -21,6 +21,7 @@ class QuestionsController < ApplicationController
   def show
     @response = Response.new
     @question = Question.find(params[:id])
+    @vote = Vote.new
   end
 
   private

@@ -1,0 +1,7 @@
+<%= form_for(@vote) do |f|%>
+  <div class ="form-group">
+    <%#= f.hidden_field :response_id, { :value => @response.id } %>
+    <%= f.hidden_field :question_id, { :value => @question.id } %>
+    <%= f.submit 'Vote', :class => "btn btn-warning btn-sm" %>
+  </div>
+<% end %>

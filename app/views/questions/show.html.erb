@@ -3,10 +3,11 @@
 <h2><%= @question.title %></h2>
 <h3><%= @question.description %></h3>
 
-
 <%= render "responses/form" %>
-<ul id="qr">
+</br>
+<div id="qr">
   <% @question.responses.each do |response| %>
-    <li><%= response.description %></li>
+    <% @vote.response_id = response.id %>
+    <p><%= render "votes/form" %><%= response.description %></p>
   <% end %>
-</ul>
+</div>
