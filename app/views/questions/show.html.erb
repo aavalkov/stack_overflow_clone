@@ -5,7 +5,7 @@
 
 
 <%= render "responses/form" %>
-<ul>
+<ul id="qr">
   <% @question.responses.each do |response| %>
     <li><%= response.description %></li>
   <% end %>

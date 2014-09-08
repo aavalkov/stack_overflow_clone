@@ -1,6 +1,6 @@
 <%= render('layouts/errors', :object => @response) %>
 
-<%= form_for(@response) do |f| %>
+<%= form_for @response, remote: true do |f| %>
 
     <div class="form-group">
       <%= f.label :description %>
@@ -9,3 +9,4 @@
     </div>
     <%= f.submit(:class => "btn btn-primary") %>
 <% end %>
+

@@ -7,8 +7,10 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
     if @response.save
-
-      redirect_to root_url
+      respond_to do |format|
+        format.html { redirect_to question_path(@response.question_id) }
+        format.js
+      end
     else
       @question = Question.find(params[:question_id])
       render 'questions/show'
@@ -22,3 +24,6 @@ class ResponsesController < ApplicationController
   end
 
 end
+        #include respond to and thing .js
+        #format .js
+        #render not redirect
