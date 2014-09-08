@@ -1,0 +1,11 @@
+<%= render('layouts/errors', :object => @response) %>
+
+<%= form_for(@response) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, :class => "form-control" %>
+      <%= f.hidden_field :question_id, { :value => @question.id } %>
+    </div>
+    <%= f.submit(:class => "btn btn-primary") %>
+<% end %>

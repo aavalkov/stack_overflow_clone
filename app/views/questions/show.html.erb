@@ -2,3 +2,11 @@
 
 <h2><%= @question.title %></h2>
 <h3><%= @question.description %></h3>
+
+
+<%= render "responses/form" %>
+<ul>
+  <% @question.responses.each do |response| %>
+    <li><%= response.description %></li>
+  <% end %>
+</ul>
