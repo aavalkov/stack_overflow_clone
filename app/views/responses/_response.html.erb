@@ -1,6 +1,6 @@
   <div class ='col-md-8' id="vote-background">
     <div id="num-votes_<%=response.id%>">
-      <h4>Number of Votes: <%= response.votes.count %></h4>
+      <h4>Number of Votes: <span id ="vote-num_<%=response.id%>"> <%= response.votes.count %></span></h4>
     </div>
     <p><%= response.description %><%= render "votes/form", response_id: response.id %></p>
   </div>
