@@ -2,4 +2,6 @@ $(function(){
   $("#vote-num_<%=@vote.response.id%>").text("<%= j render 'votes' %>");
 });
 
-$('#vote-form').hide()
+$(function(){
+  $('#vote-form').hide();
+});

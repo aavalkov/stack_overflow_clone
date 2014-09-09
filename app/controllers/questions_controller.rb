@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @response = @question.responses.new
+    @response = Response.new(question: @question)
     @vote = @response.votes.new
   end
 

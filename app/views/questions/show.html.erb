@@ -6,7 +6,5 @@
 <%= render "responses/form" %>
 </br>
 <div id="qr">
-  <% @question.responses.each do |response| %>
-    <%= render response %>
-  <% end %>
+  <%= render @question.responses %>
 </div>

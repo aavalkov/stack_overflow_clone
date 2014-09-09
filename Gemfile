@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'pg'
+gem 'database_cleaner'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -9,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'factory_girl'
+gem "factory_girl_rails", "~> 4.0"
 gem 'bcrypt-ruby'
 
 group :development do
