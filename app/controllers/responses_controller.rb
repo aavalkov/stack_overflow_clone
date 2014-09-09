@@ -9,7 +9,9 @@ class ResponsesController < ApplicationController
     if @response.save
       respond_to do |format|
         format.html { redirect_to question_path(@response.question_id) }
-        format.js
+        format.js do
+          @vote = @response.votes.new
+        end
       end
     else
       @question = Question.find(params[:question_id])

@@ -5,11 +5,12 @@ class VotesController < ApplicationController
   end
 
   def create
-
     @vote = Vote.new(vote_params)
     if @vote.save
-      flash[:notice] = "Vote saved"
-      redirect_to root_url
+      respond_to do |format|
+        format.html { redirect_to question_path(@response.question_id) }
+        format.js
+      end
     else
       render 'questions/show'
     end

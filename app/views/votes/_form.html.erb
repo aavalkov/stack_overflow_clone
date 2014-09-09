@@ -1,7 +1,7 @@
-<%= form_for(@vote) do |f|%>
-  <div class ="form-group">
-    <%#= f.hidden_field :response_id, { :value => @response.id } %>
-    <%= f.hidden_field :question_id, { :value => @question.id } %>
+<%= form_for @vote, remote: true do |f|%>
+  <div class ="form-group" id = 'vote-form' >
+    <%= f.hidden_field :response_id, { :value => response_id } %>
+    <%= f.hidden_field :question_id, { :value => @vote.response.question.id } %>
     <%= f.submit 'Vote', :class => "btn btn-warning btn-sm" %>
   </div>
 <% end %>

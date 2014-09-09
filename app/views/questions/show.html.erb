@@ -7,7 +7,6 @@
 </br>
 <div id="qr">
   <% @question.responses.each do |response| %>
-    <% @vote.response_id = response.id %>
-    <p><%= render "votes/form" %><%= response.description %></p>
+    <%= render response %>
   <% end %>
 </div>

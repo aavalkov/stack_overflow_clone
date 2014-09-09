@@ -19,9 +19,9 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @response = Response.new
     @question = Question.find(params[:id])
-    @vote = Vote.new
+    @response = @question.responses.new
+    @vote = @response.votes.new
   end
 
   private

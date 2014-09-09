@@ -15,3 +15,14 @@
  */
   @import "bootstrap-sprockets";
   @import "bootstrap";
+
+#vote-form {
+  float: right;
+}
+
+#vote-background {
+  background-color: #eee;
+  border-radius:5px;
+  padding-left: 5px;
+  margin-top:10px;
+}
