@@ -7,6 +7,7 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
     if @response.save
+      UserMailer.question_responded(@response.question.user).deliver
       respond_to do |format|
         format.html { redirect_to question_path(@response.question_id) }
         format.js do
