@@ -23,6 +23,7 @@ end
 group :test, :development do
   gem 'capybara'
   gem 'bcrypt-ruby'
+  gem "letter_opener"
   gem 'rspec-rails'
 end
 

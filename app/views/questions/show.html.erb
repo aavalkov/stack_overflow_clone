@@ -1,6 +1,7 @@
 <h1>Stack Overflow</h1>
 
 <h2><%= @question.title %></h2>
+<h4>Posted by: <%= @question.user.name %></h4>
 <h3><%= @question.description %></h3>
 
 <%= render "responses/form" %>
