@@ -1,6 +1,6 @@
 <% unless (Vote.find_by(:user_id => current_user.id) && Vote.find_by(:response_id => response_id))%>
   <%= form_for @vote, remote: true do |f|%>
-    <div class ="form-group" id = 'vote-form' >
+    <div class ="form-group" id = 'vote-form_<%=@vote.response.id%>' >
       <%= f.hidden_field :response_id, { :value => response_id } %>
       <%= f.hidden_field :question_id, { :value => @vote.response.question.id } %>
       <%= f.submit 'Vote', :class => "btn btn-warning btn-sm" %>
